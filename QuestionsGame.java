@@ -22,13 +22,13 @@ public class QuestionsGame {
     }
 
     private void writeNode(PrintStream output, QuestionNode node) {
-        if (node.data.contains("?")) {
+        if (node.data.indexOf('?') > -1) {
             output.println("Q:");
             output.println(node.data);
             writeNode(output, node.yes);
             writeNode(output, node.no); 
         } else {
-            output.println("Q:");
+            output.println("A:");
             output.println(node.data); 
         }
     }
@@ -112,7 +112,6 @@ public class QuestionsGame {
             yes = null;
             no = null;             
         }
-
 
     }
 }

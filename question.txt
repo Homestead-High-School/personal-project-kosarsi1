@@ -1,10 +1,18 @@
 Q:
-Is it an animal?
+is it cute?
 Q:
-Does it hop?
+does it turn into a cat?
 A:
-frog
+kitten
 A:
-dog
+puppy
+Q:
+does it have wheels?
+Q:
+does it have 2 wheels?
+A:
+bike
+A:
+car
 A:
 computer
