@@ -1,22 +1,10 @@
 Q:
-Is it an animal?
+is it an animal?
 Q:
-Can it fly?
+is it a mammal?
 A:
-bird
-Q:
-Does it have a tail?
+dog
 A:
-mouse
+crocodile
 A:
-spider
-Q:
-Does it have wheels?
-A:
-bicycle
-Q:
-Is it nice?
-A:
-TA
-A:
-teacher
+computer

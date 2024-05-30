@@ -33,5 +33,8 @@ public class MakeCode {
         HuffmanTree t = new HuffmanTree(count);
         PrintStream output = new PrintStream(new File(codeFile));
         t.write(output);
+
+        console.close();
+        input.close();
     }
 }

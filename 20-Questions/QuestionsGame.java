@@ -12,15 +12,19 @@ public class QuestionsGame {
     private QuestionNode overallRoot; 
     private Scanner console; 
 
+    // Initializes the root of the question tree as an answer "computer" and initializes the input
     public QuestionsGame() {
         overallRoot = new QuestionNode("computer"); 
         console = new Scanner(System.in); 
     }
 
+    // Writes the question tree to the output file in pre-order 
     public void write(PrintStream output) {
         writeNode(output, overallRoot); 
     }
 
+    // Recursive helper method for the write method that prints the node's
+    // type and data, and if it's a question node, calls the method on its children 
     private void writeNode(PrintStream output, QuestionNode node) {
         if (node.data.indexOf('?') > -1) {
             output.println("Q:");
@@ -33,10 +37,15 @@ public class QuestionsGame {
         }
     }
 
+    // Reads a text file that contains nodes and their data in pre-order and 
+    // creates the question tree based off of that  
     public void read(Scanner input) {
         overallRoot = readTreeHelper(input);
     }
 
+    // Recursive helper method for the read method, either returns the node
+    // if it's an answer node, or sets the left and right nodes to the next
+    // line nodes and returns itself
     private QuestionNode readTreeHelper(Scanner input) {
         char type = input.nextLine().charAt(0);
         String data = input.nextLine();
@@ -50,11 +59,17 @@ public class QuestionsGame {
         }
     }
 
+    // Asks questions until it gets to an answer, when it will
+    // ask the user if the answer is right; if not, it will add
+    // the user's answer to the question tree 
     public void askQuestions() {
         askQuestions(overallRoot);
     }
 
-    public void askQuestions(QuestionNode node) {
+    // Recursive helper method for the ask questions method which
+    // asks the question of the input node or checks its answer 
+    // if it's an answer node 
+    private void askQuestions(QuestionNode node) {
         if (node.data.contains("?")) {
             if (yesTo(node.data)) {
                 askQuestions(node.yes);
@@ -101,6 +116,7 @@ public class QuestionsGame {
         return response.equals("y");
      }   
 
+    // Class for a question node 
     private static class QuestionNode {
         // Your code here
         public String data;
